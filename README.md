@@ -1,6 +1,11 @@
 # flight-search
 Website for Flight Information
 
+## Technology
+
+HTML5
+Pure Javascript
+SCSS
 
 ## Setup
 
