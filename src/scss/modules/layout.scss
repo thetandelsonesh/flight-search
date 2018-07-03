@@ -1,0 +1,57 @@
+.header{
+	height: 10vh;
+	width: 100%;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    
+    .brand{
+        flex: 1;
+        padding: 5px;
+
+        a{
+            text-decoration: none;
+            font-size: 1.5em;
+            color: white;
+            font-weight: 700;
+        }
+    }
+}
+
+
+.main-section{
+    position: relative;    
+    padding: 14px;
+    min-height: 90vh;
+    .result-box{
+        width: 100%;
+        min-height: 80px;
+        background-color: #efefef;
+        border-radius: 7px;
+    }
+    
+}
+
+
+
+.footer{
+	height: 5vh;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+    
+    .tag{
+        flex: 1;
+        padding: 5px;
+        a{
+            text-decoration: none;
+            font-size: 0.85em;
+            color: #6c6c6c;
+        }
+    }
+}

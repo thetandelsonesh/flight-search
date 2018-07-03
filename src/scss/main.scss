@@ -1,3 +1,29 @@
-html{
-    background-color: #efefef;
+@import 'common/normalize';
+@import 'common/grid';
+
+* {
+    box-sizing: border-box;
 }
+
+$font-stack : 'Open-sans',sans-serif;
+
+$primary-color : red;
+$accent : blue;
+
+$url : 'http://localhost:3000/';
+
+
+
+body{
+    background-image: url("#{$url}img/bg.jpg");
+    font-family: $font-stack;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+@import 'modules/loader';
+@import 'modules/layout';
+@import 'modules/form';
+@import 'modules/result';

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Flights | Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="main.bundle.css">
+    
+</head>
+<body onload="startAnimation()" onresize="resizeit()">
+    <div id="pre-loader">
+        <div class="earth"></div>
+    </div>
+
+    <div class="header">
+        <div class="brand">
+            <a href="#">FLIGHT SEARCH</a>
+        </div>
+    </div>
+
+    <section class="main-section">
+        <div class="form-container">
+            <form id="search-form" name="search-form">
+                <div class="row">
+                    <div class="col-33">
+                        <input type="text" id="origin" name="origin" placeholder="Enter Origin" onkeyup="validateField(this)">
+                    </div>            
+                    <div class="col-33">
+                        <input type="text" id="dest" name="dest"  placeholder="Enter Destination" onkeyup="validateField(this)">
+                    </div>
+                    <div class="col-33"> 
+                        <input type="number" min="1" id="passanger" name="passanger" placeholder="Passangers" onkeyup="validateField(this)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <div class="toggler" id="toggler">
+                            <label for="oneway">
+                                <input id="oneway" type="radio" name="bookingtype" value="1" onclick="validateField()">
+                                <span class="btn">One Way</span>
+                            </label>
+                            <label for="return">
+                                <input id="return" type="radio" name="bookingtype" value="2" onclick="validateField()">
+                                <span class="btn">Return</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-25">
+                        <input type="date" placeholder="Date" id="departdate" name="departdate" onkeyup="validateField(this)">
+                    </div>
+                    <div class="col-25">
+                        <input type="date" placeholder="Date" id="returndate" name="returndate" onkeyup="validateField(this)">
+                    </div>            
+                    <div class="col-10">
+                        <button type="button" onclick="getFormValues()">FLY</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="result-container">
+            <div class="row">
+                <div class="col-fix-33">
+                    <h1 id="origin-result">FROM</h1>
+                    <p id="depart-result">Depart</p>
+                </div>
+                <div class="col-fix-33 pull-center">
+                    <img  id="bookingtype" src="img/return.png" alt="">
+                </div>
+                <div class="col-fix-33 pull-right">
+                    <h1 id="dest-result">TO</h1>
+                    <p id="return-result">Return</p>
+                </div>
+            </div>
+            <div id="container-box-dump">
+
+            </div>
+            <!-- dummy template block -->
+            <div class="row container-box" style="display: none">
+                <div class="col-50">
+                    <div class="row">
+                        <div class="col-fix-50 ">
+                            <h3>AI-202</h3>
+                            <h3>AI-202</h3>
+                            <h3>AI-202</h3>
+                            <h3>AI-202</h3>
+                        </div>
+                        <div class="col-fix-50 pull-right">
+                                <h3>AI-202</h3>
+                                <h3>AI-202</h3>
+                                <h3>AI-202</h3>
+                                <h3>AI-202</h3>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-50 pull-center">
+                    <h2>Rs. 10000</h2>
+                    <button>BOOK</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <div class="footer">
+        <div class="tag">
+            <a href="#">&copy; Copyright 2018</a>
+        </div>
+        <div class="tag pull-right">
+            <a href="#">Designed by 31SH</a>
+        </div>
+    </div>
+
+    <script>
+        document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+                setTimeout(function(){
+                    // document.getElementsByClassName('earth')[0].style.animation = "spin 3.5s infinite linear,zoomin 0.5s 1 ease-in-out";
+                    var oldClass = document.getElementsByClassName('earth')[0].getAttribute("class");
+                    document.getElementsByClassName('earth')[0].setAttribute("class",oldClass+" zoom-animate");
+        
+                    document.getElementById('pre-loader').style.opacity = 0;                    
+                    setTimeout(function(){
+                        document.getElementById('pre-loader').remove();
+                    },500);
+                },2000)
+            }
+        }
+    </script>
+    <script src="js/tanparticle.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
